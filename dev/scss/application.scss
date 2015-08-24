@@ -14,12 +14,14 @@
 @import "variables"; // Variables, mixins, settings, etc
 
 // Components
-@import "components/typography"; // Typography, Headers, paragraphs, etc
-@import "components/form"; // Form styles
-@import "components/buttons"; // Button styles
+@import "components/typography"; 
+@import "components/lists"; 
+@import "components/form"; 
+@import "components/buttons"; 
 
 // Content
-@import "content/pages"; // Pages styles
+@import "content/navigation"; 
+@import "content/pages"; 
 
 // Responsive
-@import "responsive"; // Responsive styles | Optional
+@import "responsive"; 

@@ -7,10 +7,19 @@ App = (function() {
   }
 
   App.prototype.init = function() {
-    var styles;
-    styles = ["display: block", "background: #f7cd81", "color: white", "padding: 20px 20px 20px 20px", "text-align: center", "font-weight: normal", "font-size: 20px", "line-height: 60px"].join(';');
-    console.log('%c Nutshell!', styles, 'Has loaded.');
-    return console.log('Happy Coding!');
+    var $languageOptions, $searchDropDown, languageTrigger, searchTrigger;
+    languageTrigger = $('.language-trigger');
+    $languageOptions = document.querySelector('.language-options');
+    languageTrigger.on('click', function(e) {
+      e.preventDefault();
+      return classie.toggle($languageOptions, 'show');
+    });
+    searchTrigger = $('.search-trigger');
+    $searchDropDown = document.querySelector('.search-box');
+    return searchTrigger.on('click', function(e) {
+      e.preventDefault();
+      return classie.toggle($searchDropDown, 'show');
+    });
   };
 
   return App;

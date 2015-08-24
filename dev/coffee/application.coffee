@@ -1,8 +1,19 @@
 class App
   init: =>
-    styles = ["display: block","background: #f7cd81","color: white","padding: 20px 20px 20px 20px","text-align: center","font-weight: normal","font-size: 20px","line-height: 60px"].join(';')
-    console.log '%c Nutshell!', styles, 'Has loaded.'
-    console.log 'Happy Coding!'
+    
+    # Language Selector
+    languageTrigger = $('.language-trigger')
+    $languageOptions = document.querySelector '.language-options'
+    languageTrigger.on 'click', (e) ->
+      e.preventDefault()
+      classie.toggle $languageOptions, 'show'
+
+    # Search Drop Down
+    searchTrigger = $('.search-trigger')
+    $searchDropDown = document.querySelector '.search-box'
+    searchTrigger.on 'click', (e) ->
+      e.preventDefault()
+      classie.toggle $searchDropDown, 'show'
 
 $ ->
   Application = new App()

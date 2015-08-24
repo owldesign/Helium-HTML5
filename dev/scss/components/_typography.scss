@@ -3,11 +3,37 @@
  * ============================================ */
 
 // Google Fonts
-$Montserrat: "Montserrat", sans-serif;
-$lato: "Lato", sans-serif;
+$Montserrat: "Montserrat", sans-serif; // 400,700
+$lato: "Lato", sans-serif; // 300,400,400italic,700,900
 
-// Variables
-$f-size: 16px;
-$f-lh: 1;
+// Global
+h1,h2,h3,h4,h5,p,a,span,dd,dl,input,textarea,button,label {
+  @include antialias;
+}
 
+// Links
+a {
+  font-family: $lato;
+  font-size: 14px;
+  text-decoration: none;
+  outline: none;
+}
 
+// Headers
+h1 {
+  font-family: $lato;
+  font-size: 36px;
+  color: $c-textDarkBlue;
+  font-weight: 300;
+  .bold {
+    font-weight: 700;
+  }
+}
+
+// Paragraph
+p {
+  font-family: $lato;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $c-offBlue;
+}

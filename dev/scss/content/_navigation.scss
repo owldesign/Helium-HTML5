@@ -1,0 +1,170 @@
+/* ============================================ *
+ * Navigation
+ * ============================================ */
+
+#primary-header {
+  background: $c-blue;
+}
+
+// Top Navigation
+.top-nav {
+  position: relative;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 20px 0;
+  @include clearfix;
+}
+.language-dd {
+  float: left;
+  .language-trigger {
+    font-weight: 700;
+    color: white;
+    i {
+      position: relative;
+      top: -2px;
+      font-size: 10px;
+      padding-left: 10px;
+    }
+  }
+
+  .language-options {
+    position: absolute;
+    top: 57px;
+    z-index: 2;
+    box-shadow: 0 0 7px 0 rgba(black ,.1);
+    background: white;
+    display: none;
+    &.show {
+      display: block;
+    }
+    a {
+      display: block;
+      padding: 15px 0 15px 30px;
+      color: $c-offBlue;
+      min-width: 300px;
+      border-bottom: 1px solid #eff4f8;
+      box-sizing: border-box;
+      &:hover {
+        color: $c-textDarkBlue;
+        background: #fbfcfc;
+      }
+    }
+    .flag {
+      display: inline-block;
+      width: 30px;
+      margin-right: 10px;
+    }
+    img {
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+}
+
+// Social
+.social {
+  float: right;
+  a {
+    color: white;
+    padding: 0 4px;
+  }
+}
+
+// Primary Navigation
+.primary-nav {
+  box-shadow: 0 1px 10px 0 rgba(black, .1);
+  .inner {
+    position: relative;
+    max-width: $max-width;
+    margin: 0 auto;
+    @include clearfix;
+  }
+  .logo {
+    display: block;
+    margin-top: 14px;
+    float: left;
+    h1 {
+      font-weight: 900;
+      font-size: 22px;
+      float: left;
+      padding-top: 10px;
+      color: $c-textDarkBlue;
+    }
+    svg {
+      float: left;
+      margin-right: 20px;
+      width: 22px;
+      fill: $c-blue;
+    }
+  }
+}
+
+#menu {
+  float: right;
+  li {
+    position: relative;
+    display: inline-block;
+    padding: 25px 20px;
+    &:hover {
+      & > .sub-menu {
+        display: block;
+      }
+    }
+  }
+  a {
+    display: block;
+    color: $c-offBlue;
+    // padding: 20px 20px 0 20px;
+    &:hover {
+      color: $c-blue;
+    }
+  }
+
+  .sub-menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    min-width: 200px;
+    background: white;
+    border-top: 3px solid lighten($c-midBlue, 40);
+    box-shadow: 0 0 7px 0 rgba(black ,.1);
+    a {
+      display: block;
+      padding: 15px 20px;
+      border-bottom: 1px solid #ecf0f1;
+      i.left { margin-right: 5px; }
+      i.right { float: right; }
+      &:hover {
+        color: $c-textDarkBlue;
+        background: #fbfcfc;
+      }
+    }
+  }
+}
+
+.search-box {
+  display: none;
+  position: absolute;
+  top: 64px;
+  right: 0;
+  padding: 8px;
+  width: 230px;
+  background: white;
+  box-sizing: border-box;
+  background: white;
+  border-top: 3px solid lighten($c-midBlue, 40);
+  box-shadow: 0 0 7px 0 rgba(black ,.1);
+  &.show { display: block; }
+  input {
+    width: 100%;
+  }
+  button {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    font-size: 16px;
+    color: $c-offBlue;
+    &:hover { color: $c-blue; }
+  }
+}

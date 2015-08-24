@@ -3,14 +3,26 @@
  * ============================================ */
 
 #{$all-text-inputs} {
-  border: 1px solid #f00;
+  padding: 10px;
+  border: 1px solid lighten($c-offBlue, 20);  
+  box-sizing: border-box;
+  @include appearance(none);
+}
+button {
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  @include appearance(none);
 }
 
 #{$all-text-inputs-focus},
 #{$all-text-inputs-hover} {
-  border: 1px solid #0f0;
+  outline: none;
+  // border: 1px solid #0f0;
 }
 
 #{$all-text-inputs-active} {
-  border: 1px solid #00f;
+  // border: 1px solid #00f;
 }
