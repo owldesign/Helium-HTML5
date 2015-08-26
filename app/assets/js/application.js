@@ -3,6 +3,7 @@ var App,
 
 App = (function() {
   function App() {
+    this.callouts = bind(this.callouts, this);
     this.hero = bind(this.hero, this);
     this.init = bind(this.init, this);
   }
@@ -31,24 +32,38 @@ App = (function() {
         nextButton: '.swiper-next',
         prevButton: '.swiper-prev',
         onSlideChangeStart: function(swiper) {
-          $('.number-wrapper .number').removeClass('fadeOut');
-          return $('.number-wrapper .number').addClass('fadeOut');
+          $('.number-wrapper .number').removeClass('fadeInRight');
+          return $('.number-wrapper .number').addClass('fadeOutRight');
         },
         onSlideChangeEnd: function(swiper) {
-          var number;
+          var number, totalSlides;
           number = swiper.activeIndex + 1;
-          $('.number-wrapper .number').removeClass('fadeOut');
-          $('.number-wrapper .number').addClass('fadeIn');
+          totalSlides = swiper.slides.length;
+          if (number === 2) {
+            $('.swiper-prev').fadeIn();
+          }
+          if (number === totalSlides - 1) {
+            $('.swiper-next').fadeIn();
+          }
+          $('.number-wrapper .number').removeClass('fadeOutRight');
+          $('.number-wrapper .number').addClass('fadeInRight');
           return $('.number-wrapper .number').html(number);
         },
         onReachEnd: function(swiper) {
-          return console.log('end reached');
+          return $('.swiper-next').fadeOut();
         },
         onReachBeginning: function(swiper) {
-          return console.log('beginning reached');
+          return $('.swiper-prev').fadeOut();
         }
       });
     }
+  };
+
+  App.prototype.callouts = function() {
+    return $('.accordion-1 h2').on('click', function() {
+      $(this).toggleClass('active');
+      return $(this).next('.dd').stop().slideToggle();
+    });
   };
 
   return App;
@@ -59,5 +74,6 @@ $(function() {
   var Application;
   Application = new App();
   Application.init();
-  return Application.hero();
+  Application.hero();
+  return Application.callouts();
 });

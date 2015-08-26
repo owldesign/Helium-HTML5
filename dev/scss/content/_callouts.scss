@@ -1,0 +1,156 @@
+/* ============================================ *
+ * Callouts
+ * ============================================ */
+
+// Callout 1
+#callout-1 {
+  @include align-items(flex-start);
+  @include display(flex);
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include flex-flow(wrap);
+  & > article {
+    width: 20%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 60px;
+    @include transition(all .3s ease);
+    &:nth-child(odd) { background: #f5f7f8; }
+    &:hover { 
+      background: #2f2933; 
+      figcaption { color: $c-blue; }
+    }
+
+    i { color: $c-offBlue; font-size: 50px; margin-bottom: 30px; }
+    figure {
+      position: relative;
+      &:after {
+        content: "";
+        display: inline-block;
+        position: relative;
+        top: -20px;
+        background: $c-blue;
+        @include size(20px 2px);
+      }
+    }
+    figcaption {
+      font-weight: 900;
+      text-transform: uppercase;
+      color: $c-textDarkBlue;
+      margin-bottom: 30px;
+      @include transition(all .3s ease);
+    }
+  }
+}
+
+
+// Callout 2
+#callout-2 {
+  background: $c-blue;
+  padding: 60px 0;
+  text-align: center;
+  h1 {
+    color: white;
+    margin-bottom: 15px;
+  }
+  p {
+    color: white;
+  }
+}
+
+
+// Callout 3
+#callout-3 {
+  @include clearfix;
+  background: #11111e;
+  padding: 150px 0;
+  aside {
+    width: 50%;
+    min-height: 100px;
+    float: left;
+    overflow: hidden;
+    &.left {
+      text-align: center;
+      i {
+        font-size: 220px;
+        color: white;
+      }
+    }
+    &.right {
+      max-width: 570px;
+    }
+  }
+  h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+  h2 {
+    position: relative;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 15px 0 0 0;
+    &:before {
+      content: "\f067";
+      font-family: 'FontAwesome';
+      font-size: 10px;
+      padding-right: 10px;
+    }
+    &.active {
+      &:before { content: "\f068"; }
+    }
+  }
+  p {
+    color: $c-offBlue;
+    padding: 10px 0;
+  }
+  .dd {
+    display: none;
+  }
+}
+
+
+// Callout 4
+#callout-4 {
+  .inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 50px 0;
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+  }
+  article {
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    figure {
+      display: inline-block;
+      padding: 35px;
+      border-radius: 100%;
+      margin-bottom: 30px;
+      border: 5px solid $c-blue;
+      background: $c-blue;
+      @include transition(all .3s ease);
+      i {
+        color: white;
+        font-size: 30px;
+        @include transition(all .3s ease);
+      }
+    }
+    h2 {
+      color: $c-textDarkBlue;
+      font-weight: 600;
+      margin-bottom: 15px;
+      @include transition(all .3s ease);
+    }
+    &:hover {
+      figure { background: white; }
+      h2 { color: $c-blue; }
+      i { color: $c-blue; }
+    }
+  }
+}

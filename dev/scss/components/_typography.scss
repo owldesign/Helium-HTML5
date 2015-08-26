@@ -7,7 +7,7 @@ $montserrat: "Montserrat", sans-serif; // 400,700
 $lato: "Lato", sans-serif; // 300,400,400italic,700,900
 
 // Global
-h1,h2,h3,h4,h5,p,a,span,dd,dl,input,textarea,button,label {
+h1,h2,h3,h4,h5,p,a,span,dd,dl,input,textarea,button,label,figcaption {
   @include antialias;
   font-family: $lato;
   font-weight: 400;

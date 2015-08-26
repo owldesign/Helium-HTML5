@@ -10,15 +10,15 @@
     height: 510px;
   }
 
-  
   .arrow-pagination {
     position: absolute;
     right: 40px;
     top: 50%;
     z-index: 5;
     width: 83px;
-    margin-top: -60px;
+    margin-top: -70px;
     .swiper-arrow {
+      color: white;
       position: absolute;
       z-index: 2;
       cursor: pointer;
@@ -28,6 +28,7 @@
       &.swiper-next { bottom: -40px; }
     }
   }
+
   .pager {
     .title {
       display: block;
@@ -36,19 +37,45 @@
       margin-top: -20px;
     }
   }
+
   .number-wrapper {
     overflow: hidden;
     @include size(60px 90px);
-    border-right: 1px solid black;
+    border-right: 2px solid white;
     @include transform(rotate(45deg));
 
     .number {
+      color: white;
       display: block;
-      font-family: $montserrat;
+      font-family: $lato;
+      font-weight: 900;
       font-size: 50px;
       margin-top: 20px;
-      margin-left: 40px;
+      margin-left: 35px;
       @include transform(rotate(-45deg));
+    }
+  }
+
+  // Slides
+  .swiper-slide {
+    background-size: cover !important;
+    .content {
+      margin-top: 140px;
+    }
+    h1 {
+      color: white;
+      font-family: $lato;
+      font-size: 70px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    h3 {
+      color: white;
+      font-size: 18px;
+      font-weight: 300;
+      font-style: italic;
+      text-align: center;
     }
   }
 }

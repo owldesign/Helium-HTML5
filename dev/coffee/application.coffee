@@ -24,30 +24,34 @@ class App
         nextButton: '.swiper-next'
         prevButton: '.swiper-prev'
         onSlideChangeStart: (swiper)->
-          $('.number-wrapper .number').removeClass 'fadeOut'
-          $('.number-wrapper .number').addClass 'fadeOut'
+          $('.number-wrapper .number').removeClass 'fadeInRight'
+          $('.number-wrapper .number').addClass 'fadeOutRight'
           
         onSlideChangeEnd: (swiper)->
           number = swiper.activeIndex + 1
-          $('.number-wrapper .number').removeClass 'fadeOut'
-          $('.number-wrapper .number').addClass 'fadeIn'
+          totalSlides = swiper.slides.length
+          if number == 2 
+            $('.swiper-prev').fadeIn()
+          if number == totalSlides - 1
+            $('.swiper-next').fadeIn()
+
+          $('.number-wrapper .number').removeClass 'fadeOutRight'
+          $('.number-wrapper .number').addClass 'fadeInRight'
           $('.number-wrapper .number').html number
         onReachEnd: (swiper) ->
-          console.log 'end reached'
+          $('.swiper-next').fadeOut()
         onReachBeginning: (swiper) ->
-          console.log 'beginning reached'
-        # paginationBulletRender: (index, className) ->
-        #   console.log className 
-        #   console.log index 
+          $('.swiper-prev').fadeOut()
       )
+  
+  callouts: =>
+    $('.accordion-1 h2').on 'click', ->
+      $(@).toggleClass 'active'
+      $(@).next('.dd').stop().slideToggle()
 
-      # $('.swiper-prev').on 'click', ->
-      #   heroSwiper.slidePrev()
-
-      # $('.swiper-next').on 'click', ->
-      #   heroSwiper.slideNext()
 
 $ ->
   Application = new App()
   Application.init()
   Application.hero()
+  Application.callouts()
