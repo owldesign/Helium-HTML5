@@ -3,12 +3,14 @@
  * ============================================ */
 
 // Google Fonts
-$Montserrat: "Montserrat", sans-serif; // 400,700
+$montserrat: "Montserrat", sans-serif; // 400,700
 $lato: "Lato", sans-serif; // 300,400,400italic,700,900
 
 // Global
 h1,h2,h3,h4,h5,p,a,span,dd,dl,input,textarea,button,label {
   @include antialias;
+  font-family: $lato;
+  font-weight: 400;
 }
 
 // Links
@@ -24,11 +26,13 @@ h1 {
   font-family: $lato;
   font-size: 36px;
   color: $c-textDarkBlue;
-  font-weight: 300;
-  .bold {
-    font-weight: 700;
-  }
 }
+
+// Special
+.bold { font-weight: 700; }
+.light { font-weight: 300; }
+.upper { text-transform: uppercase; }
+.lower { text-transform: lowercase; }
 
 // Paragraph
 p {

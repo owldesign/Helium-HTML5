@@ -1,0 +1,54 @@
+/* ============================================ *
+ * Hero
+ * ============================================ */
+#hero {
+  position: relative;
+
+  .swiper-container {
+    background: #d3d2d0;
+    width: 100%;
+    height: 510px;
+  }
+
+  
+  .arrow-pagination {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    z-index: 5;
+    width: 83px;
+    margin-top: -60px;
+    .swiper-arrow {
+      position: absolute;
+      z-index: 2;
+      cursor: pointer;
+      left: 50%;
+      font-size: 22px;
+      &.swiper-prev { top: -10px; }
+      &.swiper-next { bottom: -40px; }
+    }
+  }
+  .pager {
+    .title {
+      display: block;
+      font-size: 12px;
+      text-align: right;
+      margin-top: -20px;
+    }
+  }
+  .number-wrapper {
+    overflow: hidden;
+    @include size(60px 90px);
+    border-right: 1px solid black;
+    @include transform(rotate(45deg));
+
+    .number {
+      display: block;
+      font-family: $montserrat;
+      font-size: 50px;
+      margin-top: 20px;
+      margin-left: 40px;
+      @include transform(rotate(-45deg));
+    }
+  }
+}
